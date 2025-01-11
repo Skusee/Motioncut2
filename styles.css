@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat' sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, rgb(181, 235, 186), rgba(242, 245, 94, 0.838));
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100vh;
+}
+
+.top-content {
+  /* background-color: yellow; */
+  padding: 20px 10px;
+  margin: 30px 30px 30px 30px;
+  justify-items: center;
+  text-align: center;
+}
+
+.title {
+  color: black;
+  font-family: 'Tahoma';
+  font-size: 50px;
+  text-align: center;
+  width: 800;
+}
+
+.des-cap {
+  padding: 10px 0 20px;
+  /* margin: 20px 20px; */
+  font-family: 'Tahoma';
+  font-size: 20px;
+  color: rgba(72, 65, 65, 0.952);
+  text-align: center;
+  line-height: 25px;
+
+}
+
+/* Slider Container */
+.slider-container {
+  padding: 40px 60px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  /* position: relative; */
+  width: 60%;
+  border-radius: 10px;
+  background-color: rgba(224, 239, 241, 0.838);
+  /* background-color: yellow; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(26, 110, 96, 0.973);
+}
+
+.slider-wrapper {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  /* background-color: red; */
+}
+
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: nowrap; */
+  transition: transform 1s ease-in-out;
+
+}
+
+.slide {
+  /* width: 100%; */
+  user-select: none;
+  padding: 0px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: rgba(rgba(14, 189, 145, 0.838));
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+
+}
+
+.caption {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(45, 43, 43);
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+
+.slider .slide {
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+  height: 15px;
+  width: 15px;
+}
+
+.slider-wrapper .swiper-slide-button {
+  margin-top: -50px;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+  color: rgba(10, 114, 162, 0.775);
+}
+
+
+/* Mobile and Tablet View */
+@media screen and (max-width: 768px) {
+
+
+  .slider-container {
+    width: 95%;
+
+    padding: 10px;
+    margin-top: 0;
+
+  }
+
+
+  .slider-wrapper {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+  }
+
+  .slide img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+
+  }
+
+
+  .caption {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+
+  .slider .slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+
+  }
+
+  .slider-wrapper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+
+  }
+}
+
+/* Tablet View (from 768px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .slider-container {
+    width: 90%;
+
+  }
+
+  .slider-wrapper {
+    width: 100%;
+
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .caption {
+    font-size: 18px;
+
+    padding: 0px;
+  }
+
+  .slider .slide {
+    flex: 0 0 45%;
+
+  }
+
+
+  .slider-wrapper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+
+  }
+}
